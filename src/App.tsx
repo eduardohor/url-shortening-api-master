@@ -1,9 +1,17 @@
+import Globalstyles from "./styles/GlobalStyles";
+import { Container } from "./styles/Container";
 
+import { Header } from './components/Header/index'
 
 function App() {
 
   return (
-    <h1>Hello World!</h1>
+    <Container>
+
+      <Header />
+
+      <Globalstyles />
+    </Container>
   )
 }
 
