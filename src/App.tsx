@@ -1,17 +1,16 @@
 import Globalstyles from "./styles/GlobalStyles";
-import { Container } from "./styles/Container";
+import { Home } from "./pages/Home";
 
-import { Header } from './components/Header/index'
 
 function App() {
 
   return (
-    <Container>
+    <>
 
-      <Header />
+      <Home />
 
       <Globalstyles />
-    </Container>
+    </>
   )
 }
 
