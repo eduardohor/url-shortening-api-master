@@ -42,8 +42,14 @@ export const ContainerShorten = styled.div`
         white-space: nowrap;
         margin-left: 15px;
         font-size: 18px;
+        cursor: pointer;
+        transition: 0.3s;
 
     }
+
+    button:hover{
+            opacity: 0.9;
+        }
 `
 export const TitleMain = styled.div`
     text-align: center;
@@ -138,6 +144,12 @@ export const TextBottom = styled.div`
         padding: 8px 30px;
         border-radius: 30px;
         white-space: nowrap;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover{
+            opacity: 0.8;
     }
 
 

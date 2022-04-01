@@ -29,15 +29,25 @@ h3{
 
            li{
               list-style: none;
+              cursor: pointer;
 
               p{
                   margin-bottom: 20px;
+              }
+
+              p:hover{
+                color: hsl(180, 66%, 49%)
               }
               
               span{
                   color:  hsl(257, 7%, 63%);
               }
+
+              span:hover{
+                color: hsl(180, 66%, 49%)
+              }
            }
+           
         }
 
         
@@ -50,5 +60,9 @@ export const ContainerSocial = styled.div`
     img{
         height: 15%;
         margin-left: 20px;
+        cursor: pointer;
+        
     }
+
+    
 `

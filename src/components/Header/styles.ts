@@ -44,11 +44,20 @@ export const NavItems = styled.nav`
 
     li{
         margin-right: 50px;
+
+        a:hover{
+            color: hsl(260, 8%, 14%);
+        }
     }
 `
 export const NavLogin = styled.nav`
     li{
         margin-left: 20px;
+
+        a:hover{
+            color: hsl(260, 8%, 14%);
+        }
+        
     }
     button{
         background:  hsl(180, 66%, 49%);
@@ -59,7 +68,13 @@ export const NavLogin = styled.nav`
         padding: 8px 30px;
         border-radius: 30px;
         white-space: nowrap;
+        cursor: pointer;
+        transition: 0.3s;
     }
+
+    button:hover{
+            opacity: 0.5;
+        }
 `
 
 export const Ilustration = styled.div`
@@ -94,6 +109,12 @@ export const Ilustration = styled.div`
             border: none;
             padding: 13px 40px;
             border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover{
+            opacity: 0.5;
         }
 
        
