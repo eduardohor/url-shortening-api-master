@@ -29,18 +29,15 @@ h3{
 
            li{
               list-style: none;
-              cursor: pointer;
 
               p{
                   margin-bottom: 20px;
               }
-
-              p:hover{
-                color: hsl(180, 66%, 49%)
-              }
               
               span{
                   color:  hsl(257, 7%, 63%);
+                  cursor: pointer;
+
               }
 
               span:hover{

@@ -4,14 +4,35 @@ import imgIconFullyCustomizable from '../../assets/images/icon-fully-customizabl
 
 import { ContainerShorten, ContentDirector, TitleMain, Cards, Separator, CardFirst, CardSecond, CardLast, TextBottom } from './styles'
 
+import { api } from '../../services/api'
+import { useState } from 'react'
+
 export function Main() {
+
+    const [originalLink, setOriginalLink] = useState("")
+    const [url, setUrls] = useState("")
+
+    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+        let text = event.target.value;
+        setUrls(text)
+    }
+
+    function Shorten() {
+        api.get(`shorten?url=${url}`).then(({ data }) => {
+            setOriginalLink(data.result.original_link)
+        })
+
+
+    }
+
     return (
         <ContentDirector>
             <ContainerShorten>
-                <input type="text" placeholder='Shorten a link here...' />
-                <button>Shorten It!</button>
+                <input onChange={handleChange} type="text" placeholder='Shorten a link here...' />
+                <button onClick={Shorten}>Shorten It!</button>
             </ContainerShorten>
             <TitleMain>
+                <div>{originalLink}</div>
                 <h2>Advanced Statistics</h2>
                 <span>Track how your are performing acroos the web with <br /> our advanced statistics dashboard</span>
             </TitleMain>

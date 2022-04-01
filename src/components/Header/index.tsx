@@ -5,6 +5,7 @@ import { ContainerHeader, Top, Ilustration, NavItems, NavLogin } from './styles'
 
 
 export function Header() {
+
     return (
         <ContainerHeader>
             <Top>
@@ -32,7 +33,7 @@ export function Header() {
                 <section>
                     <h1> More than just shorter links</h1>
                     <span> Build your brand’s recognition and get detailed insights on how your links are performing.</span>
-                    <button> Get Started</button>
+                    <button > Get Started</button>
                 </section>
                 <div>
                     <img src={imgIllustration} alt="Illustration. Woman in green shirt sitting in front of a green table, fiddling with the computer" />
