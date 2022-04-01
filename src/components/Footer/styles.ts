@@ -2,13 +2,23 @@ import styled from "styled-components";
 
 export const ContainerFooter = styled.div`
     display: flex;
-    justify-content: space-around;
-    padding: 30px 0;
+    justify-content: center;
+    padding: 45px 0;
+    width: 100%;
 
     background-color: hsl(260, 8%, 14%);
     color: #fff;
+`
 
-    h3{
+
+
+export const ConteinetItems = styled.section`
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+
+
+h3{
         font-size: 24px;
     }
 
@@ -33,6 +43,7 @@ export const ContainerFooter = styled.div`
         
     }
 `
+
 
 export const ContainerSocial = styled.div`
     justify-content: space-around;

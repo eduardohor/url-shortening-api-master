@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerHeader = styled.header`
     display:flex ;
     flex-direction: column ;
-    padding: 0 100px 50px 100px;
+    width: 80%;
    
    
 `;
@@ -64,8 +64,7 @@ export const NavLogin = styled.nav`
 
 export const Ilustration = styled.div`
     display: flex;
-    margin-top: 50px;
-    justify-content: space-around;
+    margin: 50px 0 100px;
 
     section{
         max-width: 40%;
@@ -107,7 +106,7 @@ export const Ilustration = styled.div`
          img{
             width: 100%;
             height: 100%;
-            margin-left: 100px;
+            margin-left: 200px;
          }
      }
 `;
