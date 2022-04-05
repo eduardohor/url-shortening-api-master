@@ -154,3 +154,46 @@ export const TextBottom = styled.div`
 
 
 `
+
+export const LinkShorten = styled.section`
+    width: 80%;
+    margin-top: 20px;
+
+    div:first-child{
+        background: #fff;
+        border-radius: 5px;
+        padding: 24px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div{
+            display: flex;
+
+            p{
+                margin-left: 20px;
+                color:  hsl(180, 66%, 49%);
+
+            }
+
+        
+            button{
+                background:  hsl(180, 66%, 49%);
+                color: #fff;
+                border: none;
+                padding: 8px 30px;
+                margin-left: 20px;
+                margin-top: -4px;
+                border-radius: 5px;
+                white-space: nowrap;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            button:hover{
+                    opacity: 0.8;
+            }
+        }
+        
+    }
+`
