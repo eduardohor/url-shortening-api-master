@@ -2,38 +2,61 @@ import imgIconBrandRecognition from '../../assets/images/icon-brand-recognition.
 import imgIconDetailedRecords from '../../assets/images/icon-detailed-records.svg'
 import imgIconFullyCustomizable from '../../assets/images/icon-fully-customizable.svg'
 
-import { ContainerShorten, ContentDirector, TitleMain, Cards, Separator, CardFirst, CardSecond, CardLast, TextBottom, LinkShorten } from './styles'
+import { ContainerShorten, ContentDirector, TitleMain, Cards, Separator, CardFirst, CardSecond, CardLast, TextBottom, LinkShorten, ButtonCopy } from './styles'
 
 import { api } from '../../services/api'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import copy from 'copy-to-clipboard'
 
 export function Main() {
 
     const [originalLink, setOriginalLink] = useState("")
     const [shortLink, setShortLink] = useState("")
     const [url, setUrls] = useState("")
+    const [colorButton, setColorButton] = useState("")
+    const [valueButton, setValueButton] = useState("")
 
 
-    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         let text = event.target.value;
         setUrls(text)
+
     }
 
-    function Shorten() {
+    const shorten = () => {
         api.get(`shorten?url=${url}`).then(({ data }) => {
             setOriginalLink(data.result.original_link)
             setShortLink(data.result.full_short_link)
+            setColorButton("hsl(180, 66%, 49%)")
+            setValueButton("Copy")
+
             console.log(data)
+
         })
 
-
     }
+
+    const copyToClipboard = () => {
+        copy(shortLink)
+        if (colorButton == "hsl(180, 66%, 49%)") {
+            setColorButton("hsl(257, 27%, 26%)")
+            setValueButton("Copied!")
+        } else {
+            setColorButton("hsl(180, 66%, 49%)")
+            setValueButton("Copy")
+        }
+    }
+
+    useEffect(() => {
+        setColorButton("hsl(180, 66%, 49%)")
+        setValueButton("Copy")
+    }, [])
 
     return (
         <ContentDirector>
             <ContainerShorten>
                 <input onChange={handleChange} type="text" placeholder='Shorten a link here...' />
-                <button onClick={Shorten}>Shorten It!</button>
+                <button onClick={shorten}>Shorten It!</button>
             </ContainerShorten>
 
             {originalLink ? (
@@ -42,7 +65,7 @@ export function Main() {
                         <p>{originalLink}</p>
                         <div>
                             <p>{shortLink}</p>
-                            <button>Copy</button>
+                            <ButtonCopy type='button' color={colorButton} onClick={copyToClipboard} value={valueButton}></ButtonCopy>
                         </div>
                     </div>
                 </LinkShorten>

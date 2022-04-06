@@ -177,23 +177,26 @@ export const LinkShorten = styled.section`
             }
 
         
-            button{
-                background:  hsl(180, 66%, 49%);
-                color: #fff;
-                border: none;
-                padding: 8px 30px;
-                margin-left: 20px;
-                margin-top: -4px;
-                border-radius: 5px;
-                white-space: nowrap;
-                cursor: pointer;
-                transition: 0.3s;
-            }
-
-            button:hover{
-                    opacity: 0.8;
-            }
+            
         }
         
     }
+`
+export const ButtonCopy = styled.input`
+   
+    background: ${(props) => props.color};
+    color: #fff;
+    border: none;
+    padding: 8px 30px;
+    margin-left: 20px;
+    margin-top: -4px;
+    border-radius: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover{
+        opacity: 0.8;
+    }
+
 `
